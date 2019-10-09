@@ -23,8 +23,8 @@ namespace ReSharperPlugin.ResharperAsciiAnalyzer
     public class SampleHighlighting : IHighlighting
     {
         public const string SeverityId = nameof(SampleHighlighting);
-        public const string Message = "Sample highlighting message";
-        public const string Description = "Sample highlighting description";
+        public const string Message = "Name identifier must contains only ASCII symbols";
+        public const string Description = "Name identifier must contains only ASCII symbols";
 
         public SampleHighlighting(ICSharpDeclaration declaration)
         {
@@ -46,6 +46,6 @@ namespace ReSharperPlugin.ResharperAsciiAnalyzer
         public string ToolTip => Message;
 
         public string ErrorStripeToolTip
-            => $"Sample highlighting error tooltip for '{Declaration.DeclaredName}'";
+            => $"Declaration '{Declaration.DeclaredName}' contains non-ASCII symbols";
     }
 }

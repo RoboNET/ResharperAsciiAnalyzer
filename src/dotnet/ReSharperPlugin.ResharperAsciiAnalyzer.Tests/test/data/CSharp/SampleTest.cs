@@ -1,7 +1,7 @@
-public class SampleTest
+public class SampleTеst
 {
-    public void Method()
+    public void Methоd()
     {
-        var variableWithCamelCase = true;
+        var variableWithCamelСase = true;
     }
 }

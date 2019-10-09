@@ -1,12 +1,12 @@
-﻿public class |SampleTest|(0)
+﻿public class |SampleTеst|(0)
 {
-    public void |Method|(1)()
+    public void |Methоd|(1)()
     {
-        var |variableWithCamelCase|(2) = true;
+        var |variableWithCamelСase|(2) = true;
     }
 }
 
 ---------------------------------------------------------
-(0): ReSharper Warning: (T) 'Sample highlighting message' (E) 'Sample highlighting error tooltip for 'SampleTest''
-(1): ReSharper Warning: (T) 'Sample highlighting message' (E) 'Sample highlighting error tooltip for 'Method''
-(2): ReSharper Warning: (T) 'Sample highlighting message' (E) 'Sample highlighting error tooltip for 'variableWithCamelCase''
+(0): ReSharper Warning: (T) 'Name identifier must contains only ASCII symbols' (E) 'Declaration 'SampleTеst' contains non-ASCII symbols'
+(1): ReSharper Warning: (T) 'Name identifier must contains only ASCII symbols' (E) 'Declaration 'Methоd' contains non-ASCII symbols'
+(2): ReSharper Warning: (T) 'Name identifier must contains only ASCII symbols' (E) 'Declaration 'variableWithCamelСase' contains non-ASCII symbols'
