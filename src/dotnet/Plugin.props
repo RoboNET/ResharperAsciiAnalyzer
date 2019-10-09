@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <SdkVersion>2019.2.0-*</SdkVersion>
+    
+    <Title>ResharperAsciiAnalyzer</Title>
+    <Description>Description</Description>
+  
+    <Authors>Author</Authors>
+    <Copyright>Copyright $([System.DateTime]::Now.Year) Maintainers of ResharperAsciiAnalyzer</Copyright>
+    <PackageTags>resharper plugin</PackageTags>
+  
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+  </PropertyGroup>
+</Project>
