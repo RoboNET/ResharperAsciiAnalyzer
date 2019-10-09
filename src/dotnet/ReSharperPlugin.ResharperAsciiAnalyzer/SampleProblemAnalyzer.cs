@@ -1,3 +1,4 @@
+using System.Text;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 
@@ -18,13 +19,29 @@ namespace ReSharperPlugin.ResharperAsciiAnalyzer
             // Hint: Also foreach creates additional enumerator
             // ReSharper disable once ForCanBeConvertedToForeach
             // ReSharper disable once LoopCanBeConvertedToQuery
-            for (var i = 0; i < element.NameIdentifier?.Name.Length; i++)
-            {
-                if (!char.IsUpper(element.NameIdentifier.Name[i])) continue;
 
+            if (IsContainsNonAsciiSymbol(element.NameIdentifier.Name, out var _, out var _))
                 consumer.AddHighlighting(new SampleHighlighting(element));
-                return;
+        }
+
+        private static bool IsContainsNonAsciiSymbol(string input, out char symbol, out int index)
+        {
+            byte[] array = Encoding.Unicode.GetBytes(input);
+
+            for (int i = 0; i < array.Length; i += 2)
+            {
+                if ((array[i] | (array[i + 1] << 8)) > 128)
+                {
+                    symbol = (char) (array[i] | (array[i + 1] << 8));
+                    index = i / 2;
+                    return true;
+                }
             }
+
+            symbol = (char) 0;
+            index = 0;
+
+            return false;
         }
     }
 }
